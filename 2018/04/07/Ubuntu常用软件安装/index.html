@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="a simple boy.">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/facicon.ico">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          Ubuntu常用软件安装 - Hcy.dev
+        
+    </title>
+
+    <link rel="canonical" href="https://huchaoyong.github.io/2018/04/07/Ubuntu常用软件安装/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="/css/widget.css">
+
+    <link rel="stylesheet" href="/css/rocket.css">
+
+    <link rel="stylesheet" href="/css/signature.css">
+
+    <link rel="stylesheet" href="/css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('back1.jpg')
+            /*post*/
+        
+    }
+    
+    #signature{
+        background-image: url('/null');
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#Linux" title="Linux">Linux</a>
+                            
+                              <a class="tag" href="/tags/#Ubuntu" title="Ubuntu">Ubuntu</a>
+                            
+                        </div>
+                        <h1>Ubuntu常用软件安装</h1>
+                        <h2 class="subheading">记录软件安装过程</h2>
+                        <span class="meta">
+                            Hcy 于
+                            2018年04月07
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Hcy&#39;s Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">主页</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">关于</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">博文</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">标签</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <blockquote>
+<p>常用软件安装</p>
+</blockquote>
+<hr>
+<h1><span id="java">java</span></h1>
+<blockquote>
+<p>download from <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">Oracle</a>, I use java8</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># before you install java, you should uninstall 'openjdk'</span></span><br><span class="line">sudo apt-get remove openjdk*</span><br><span class="line">sudo apt-get autoremove</span><br><span class="line"><span class="comment"># unzip file on '/usr/progrm' directory</span></span><br><span class="line">tar xzvf jdk-8u151-linux-x64.tar.gz -C/usr/program</span><br><span class="line"></span><br><span class="line"><span class="comment"># set environment</span></span><br><span class="line">sudo vi ~/.bashrc</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>add flow on the last (将下面添加到.bashrc文件的末尾)</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#set oracle jdk environment</span></span><br><span class="line"><span class="built_in">export</span> JAVA_HOME=/usr/program/jdk-8u151-linux-x64</span><br><span class="line"><span class="built_in">export</span> JRE_HOME=<span class="variable">$&#123;JAVA_HOME&#125;</span>/jre  </span><br><span class="line"><span class="built_in">export</span> CLASSPATH=.:<span class="variable">$&#123;JAVA_HOME&#125;</span>/lib:<span class="variable">$&#123;JRE_HOME&#125;</span>/lib  </span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;JAVA_HOME&#125;</span>/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>active the setting (激活配置)</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br><span class="line"><span class="comment"># check</span></span><br><span class="line">java -version</span><br></pre></td></tr></table></figure>
+<h1><span id="tomcat">tomcat</span></h1>
+<blockquote>
+<p>downlaod from <a href="https://tomcat.apache.org/download-80.cgi" target="_blank" rel="noopener">Apache tomcat</a>, I use tomcat8</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># upzip file on directory '/usr/program'</span></span><br><span class="line">tar xzvf apache-tomcat-8.5.29.tar.gz -C/usr/program</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>set ‘<a href="http://startup.sh" target="_blank" rel="noopener">startup.sh</a>’ and ‘<a href="http://shutdown.sh" target="_blank" rel="noopener">shutdown.sh</a>’ on ‘apache-tomcat-8.5.29/bin’ directory</p>
+<p>insert flow before last line of ‘<a href="http://startup.sh" target="_blank" rel="noopener">startup.sh</a>’</p>
+</blockquote>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#set java environment</span></span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">JAVA_HOME</span>=/usr/program/jdk-8u151-linux-x64</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">JRE_HOME</span>=<span class="variable">$&#123;JAVA_HOME&#125;</span>/jre</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">CLASSPATH</span>=.:%&#123;JAVA_HOME&#125;/lib:%&#123;JRE_HOME&#125;/lib</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">PATH</span>=<span class="variable">$&#123;JAVA_HOME&#125;</span>/bin:$PATH</span><br><span class="line"><span class="comment">#tomcat</span></span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">TOMCAT_HOME</span>=/usr/tomcat/apache-tomcat-8.5.29</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>insert flow before last line of ‘<a href="http://shutdown.sh" target="_blank" rel="noopener">shutdown.sh</a>’</p>
+</blockquote>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#set java environment</span></span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">JAVA_HOME</span>=/usr/program/jdk-8u151-linux-x64</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">JRE_HOME</span>=<span class="variable">$&#123;JAVA_HOME&#125;</span>/jre</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">CLASSPATH</span>=.:%&#123;JAVA_HOME&#125;/lib:%&#123;JRE_HOME&#125;/lib</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">PATH</span>=<span class="variable">$&#123;JAVA_HOME&#125;</span>/bin:$PATH</span><br><span class="line"><span class="comment">#tomcat</span></span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">TOMCAT_HOME</span>=/usr/tomcat/apache-tomcat-8.5.29</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>run tomcat</p>
+</blockquote>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># if you has changed the port ,like '80', please use 'sudo' run this command</span></span><br><span class="line"><span class="regexp">/usr/</span>tomcat<span class="regexp">/apache-tomcat-8.5.29/</span>bin startup.sh</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>stop tomcat</p>
+</blockquote>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">/usr/</span>tomcat<span class="regexp">/apache-tomcat-8.5.29/</span>bin shutdown.sh</span><br></pre></td></tr></table></figure>
+<h1><span id="nodejs">nodejs</span></h1>
+<blockquote>
+<p>download from <a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">NodeJs.org</a>– select source code</p>
+</blockquote>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar xzvf <span class="keyword">node</span><span class="title">-v8</span>.<span class="number">11.1</span>.tar.gz -C/usr/program</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>set environment</p>
+</blockquote>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">vi</span> /etc/<span class="keyword">profile</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>add flow on the last</p>
+</blockquote>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="builtin-name">export</span> <span class="attribute">NODE_HOME</span>=/usr/program/node-v8.11.1</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">PATH</span>=<span class="variable">$PATH</span>:$NODE_HOME/bin</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">NODE_PATH</span>=<span class="variable">$NODE_HOME</span>/lib/node_modules</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>active file</p>
+</blockquote>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">source</span> <span class="regexp">/etc/</span>profile</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>check</p>
+</blockquote>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">node</span> <span class="title">-v</span></span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>if there are some permission like<br>
+&quot;checkPermissions Missing write access to /home/hcy/node/lib/node_module&quot;</p>
+</blockquote>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chown -R $(whoami) /home/hcy/<span class="keyword">node</span><span class="title">/</span></span><br></pre></td></tr></table></figure>
+<h1><span id="shadowsocks-ss">shadowsocks (ss)</span></h1>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># install shadowsocks</span></span><br><span class="line">sudo apt-get update </span><br><span class="line">sudo apt-get install python-gevent python-pip</span><br><span class="line">pip install shadowsocks</span><br><span class="line"></span><br><span class="line"><span class="comment"># set config</span></span><br><span class="line">sudo vi /usr/program/ss.json</span><br><span class="line"><span class="comment"># copy flow lines</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"server"</span>:<span class="string">"23.106.129.100"</span>,</span><br><span class="line">    <span class="string">"server_port"</span>:1994,</span><br><span class="line">    <span class="string">"local_port"</span>:1080,</span><br><span class="line">    <span class="string">"password"</span>:<span class="string">"your service psd"</span>,</span><br><span class="line">    <span class="string">"timeout"</span>:600,</span><br><span class="line">    <span class="string">"method"</span>:<span class="string">"rc4-md5"</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># save ss.json ,then run ss</span></span><br><span class="line">sslocal -c /etc/ss.json</span><br></pre></td></tr></table></figure>
+<p>there are two method,  1. PAC  2. global<br>
+open system setting =&gt; Network =&gt; Network proxy</p>
+<ol>
+<li>PAC , download pac file from <a href="/download/autoproxy.zip">here</a>, unzip you will get a ‘autoproxy.pac’ file<br>
+on the ‘Network proxy’ setting page, select 'Automatic’<br>
+type the  ‘autoproxy.pac’ path. like</li>
+</ol>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">file:///usr/program/autoproxy.pac</span><br></pre></td></tr></table></figure>
+<p>then Apply system wide</p>
+<ol start="2">
+<li>global<br>
+on the ‘Network proxy’ setting page, select 'Manual’<br>
+on the ‘Socks Host’ line, type like flow, ‘1080’ is your ‘local_port’ in ss.json file<br>
+host: 127.0.0.1<br>
+port: 1080<br>
+then Apply system wide</li>
+</ol>
+<h1><span id="nginx">nginx</span></h1>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># install </span></span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install nginx</span><br><span class="line"><span class="comment"># show and check config file</span></span><br><span class="line">nginx -t</span><br><span class="line"><span class="comment"># start</span></span><br><span class="line">nginx -c /etc/nginx/nginx.conf</span><br><span class="line"><span class="comment"># stop</span></span><br><span class="line">pkill -9 nginx</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>the config file is on 'nginx.conf’<br>
+config the 80 proxy to 8080(tomcat)</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">	<span class="attribute">listen</span> <span class="number">80</span> default_server;</span><br><span class="line">	<span class="attribute">listen</span> [::]:<span class="number">80</span> default_server;</span><br><span class="line">	<span class="attribute">root</span> /var/www/html;</span><br><span class="line">	<span class="attribute">index</span> index.html index.htm</span><br><span class="line">	server_name <span class="number">127.0.0.1:8080</span>;</span><br><span class="line">	<span class="attribute">location</span> / &#123;</span><br><span class="line">		<span class="attribute">proxy_pass</span> http://127.0.0.1:8080;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>config the static file to some subdomain,<br>
+like in the director  /www/api</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line">    <span class="attribute">server_name</span> api.domains.com;</span><br><span class="line">    <span class="attribute">root</span> /www/api;</span><br><span class="line">    <span class="attribute">index</span> index.html;</span><br><span class="line">    <span class="attribute">location</span> / &#123;</span><br><span class="line">	<span class="attribute">root</span> /www/api;</span><br><span class="line">	<span class="attribute">index</span> index.html;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>config the proxy some request , like google map</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">	<span class="attribute">listen</span>	<span class="number">80</span>;</span><br><span class="line">	<span class="attribute">server_name</span> gmap.domain.com;</span><br><span class="line">	<span class="attribute">client_max_body_size</span> <span class="number">20M</span>;</span><br><span class="line">	<span class="attribute">fastcgi_buffers</span> <span class="number">4</span> <span class="number">4K</span>;</span><br><span class="line">	<span class="attribute">sendfile</span> <span class="literal">on</span>;</span><br><span class="line">	<span class="attribute">send_timeout</span> <span class="number">600s</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="attribute">location</span> /kh &#123;</span><br><span class="line">		<span class="attribute">proxy_redirect</span> <span class="literal">off</span>;</span><br><span class="line">		<span class="attribute">proxy_set_header</span> Host khm2.google.com;</span><br><span class="line">		<span class="attribute">proxy_set_header</span> X-Real-IP <span class="variable">$remote_addr</span>;</span><br><span class="line">		<span class="attribute">proxy_set_header</span> X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</span><br><span class="line">		<span class="attribute">proxy_pass</span> http://khm2.google.com;</span><br><span class="line">	&#125;</span><br><span class="line">        <span class="attribute">location</span> /vt &#123;</span><br><span class="line">                <span class="attribute">proxy_redirect</span> <span class="literal">off</span>;</span><br><span class="line">                <span class="attribute">proxy_set_header</span> Host mt0.google.cn;</span><br><span class="line">                <span class="attribute">proxy_set_header</span> X-Real-IP <span class="variable">$remote_addr</span>;</span><br><span class="line">                <span class="attribute">proxy_set_header</span> X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</span><br><span class="line">                <span class="attribute">proxy_pass</span> http://mt0.google.cn;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1><span id="mount-disk">mount (disk)</span></h1>
+<blockquote>
+<p>look disk info, find disk sign like ‘/dev/sda1’</p>
+</blockquote>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">sudo fdisk -l</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>find file system type</p>
+</blockquote>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">sudo blkid</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>edit config</p>
+</blockquote>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi <span class="regexp">/etc/</span>fstab</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>in the last line ,add flow</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/dev/sda1		/media/disk		ntfs	defaults	0 	0</span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> /dev/sda1  is disk sign</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> /media/disk		<span class="built_in">where</span> the disk mount</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> ntfs		file system</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">0 (first)	disk backup</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">0 (second)	disk check (0 means don<span class="string">'t backup  don'</span>t check</span></span><br></pre></td></tr></table></figure>
+<h1><span id="idea">idea</span></h1>
+<h2><span id="1-download-idea-ultimate">1. download idea ultimate</span></h2>
+<h2><span id="2-install">2. install</span></h2>
+<h2><span id="3-use-dockercreate-a-license-machine">3. use docker,create a license machine</span></h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run -d --net=host --restart=always --name jetbrains -p 1212:1212 jbtools/jb</span><br></pre></td></tr></table></figure>
+<h2><span id="4-type-license-server-from-docker-ip-address-and-port">4. type license server from docker ip address and port</span></h2>
+<blockquote>
+<p>like ‘<a href="http://localhost:1212" target="_blank" rel="noopener">http://localhost:1212</a>’</p>
+</blockquote>
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2018/04/28/Server-operation-有关服务器操作/" data-toggle="tooltip" data-placement="top" title="Server operation(有关服务器操作)">&larr; 上一篇</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2018/04/07/常用Linux命令-小松鼠/" data-toggle="tooltip" data-placement="top" title="常用Linux命令(小松鼠)">下一篇 &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                    <div class="comment">
+                        <div id="disqus_thread" class="disqus-thread"></div>
+                    </div>
+                
+                <!-- disqus comment end -->
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">java</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">tomcat</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">nodejs</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">shadowsocks (ss)</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">nginx</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">mount (disk)</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">idea</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">7.1.</span> <span class="toc-nav-text">1. download idea ultimate</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">7.2.</span> <span class="toc-nav-text">2. install</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">7.3.</span> <span class="toc-nav-text">3. use docker,create a license machine</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">7.4.</span> <span class="toc-nav-text">4. type license server from docker ip address and port</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">标签列</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#Linux" title="Linux">Linux</a>
+                        
+                          <a class="tag" href="/tags/#Ubuntu" title="Ubuntu">Ubuntu</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>Friends</h5>
+                <ul class="list-inline">
+
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<!-- disqus embedded js code start (one page only need to embed once) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "your-disqus-ID";
+    var disqus_identifier = "https://huchaoyong.github.io/2018/04/07/Ubuntu常用软件安装/";
+    var disqus_url = "https://huchaoyong.github.io/2018/04/07/Ubuntu常用软件安装/";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus embedded js code start end -->
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/HuChaoyong">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Hcy 2018 
+                    <br>
+                    <span style="display: inline-block; margin: 0 5px;">
+                        Power by Hexo
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=YenYuHsuan&repo=hexo-theme-beantech&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://huchaoyong.github.io/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'huchaoyong.github.io';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<!-- <img src="https://huchaoyong.github.io/img/icon_wechat.png" width="0" height="0" /> -->
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/assets/koharu.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body>
+
+</html>
